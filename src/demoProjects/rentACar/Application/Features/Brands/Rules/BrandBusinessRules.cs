@@ -25,5 +25,10 @@ namespace Application.Features.Brands.Rules
             if (result.Items.Any()) throw new BusinessException("Brand name exists."); //Any data varsa..
 
         }
+
+        public async Task BrandShouldExistWhrnRequested(Brand brand)
+        {            
+            if (brand == null) throw new BusinessException("Requested brand does not exist."); //Id 
+        }
     }
 }
